@@ -16,8 +16,8 @@ def Answer_sheet_check():
 
 def Scoreing(A, Sol):
   S = 0
-  for i in range(50):  S += (Sol[i] == A[i+3]) * 1.5
-  for i in range(10):  S += (Sol[i] == A[i+3]) * 2.5 
+  for i in range(50):  S += (Sol[i] == A[i+x]) * 1.5
+  for i in range(10):  S += (Sol[i] == A[i+x]) * 2.5 
   return S
 # ----------------------------- #
 Solution = GEN_Solution()
