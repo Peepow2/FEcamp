@@ -1,4 +1,8 @@
+from datetime import datetime
 # ----------------------------- #
+def get_time():
+    return datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
 def GEN_Solution():
   # อ่านเฉลยจากกระดาษคำตอบของฝ่ายวิชาการ ซึ่งเป็นไฟล์รูป (PNG, JPG)
   # เก็บเป็นลิสต์ เช่น มี 5 ข้อปรนัย 1 ข้ออัตนัย -> ['1', '3', '5', '2', '4', '0050.00']
