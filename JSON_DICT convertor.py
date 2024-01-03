@@ -5,13 +5,12 @@ DATA = {
        '6439218121': {"name" : "LL", "age" : 21, "major" : 'Computer', "phonenumber" : "1815641331"},
         } 
 # --------------------------------------------- # แบบที่ 1
-# Dict to JSON
-fout = open("DATA.json", "w")
+fout = open("DATA.json", "w") # Dict to JSON
 json.dump(DATA, fout)
 fout.close()
 
-# JSON to Dict
-fin = open("DATA.json", "r") 
+
+fin = open("DATA.json", "r") # JSON to Dict
 DATA2 = json.loads(fin.readline())
 fin.close()
 # --------------------------------------------- # แบบที่ 2
