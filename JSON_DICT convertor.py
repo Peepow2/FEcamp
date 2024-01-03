@@ -9,7 +9,6 @@ fout = open("DATA.json", "w") # Dict to JSON
 json.dump(DATA, fout)
 fout.close()
 
-
 fin = open("DATA.json", "r") # JSON to Dict
 DATA2 = json.loads(fin.readline())
 fin.close()
