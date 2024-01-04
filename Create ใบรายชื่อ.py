@@ -22,7 +22,6 @@ pdf.ln()
 
 HEADER = ["NO", "Student_ID","Name", "Major", "Age", "University"]
 TABLE_DATA = [
-    ["NO", "Student_ID","Name", "Major", "Age", "University"],
     ["1", "643XXXXX21", "PP", "Electrical", "21", "Chulalongkorn"],
     ["2", "653XXXXX21", "North 0-3", "Civil", "20", "Old trafford"],
     ["3", "653XXXXX21", "Faro", "Computer", "20", "Chulalongkorn"],
