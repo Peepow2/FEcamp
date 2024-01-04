@@ -33,7 +33,7 @@ TABLE_DATA = [
 ]
 s = len(TABLE_DATA) - 1
 S = len(TABLE_DATA)
-for i in range(1, 1250): # เปรียบเหมือนมีเด็ก 1250* 8 = 10000 คน
+for i in range(1, 1250): # เปรียบเหมือนมีเด็ก 1250 * 8 = 10000 คน
     for j in range(1, S):
         s += 1
         TABLE_DATA.append([str(s)] + TABLE_DATA[j][1::])
