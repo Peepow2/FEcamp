@@ -49,6 +49,3 @@ with pdf.table(headings_style=headings_style, \
 
 
 pdf.output('Simple.pdf')
-
-
-
