@@ -1,4 +1,5 @@
 import fpdf
+import os
 
 # Create PDF Object
 # Layout ('P', 'L') P = แนวตั้ง L แนวนอน
@@ -32,7 +33,7 @@ TABLE_DATA = [
 ]
 s = len(TABLE_DATA) - 1
 S = len(TABLE_DATA)
-for i in range(4):
+for i in range(1, 1250): # เปรียบเหมือนมีเด็ก 1250* 8 = 10000 คน
     for j in range(1, S):
         s += 1
         TABLE_DATA.append([str(s)] + TABLE_DATA[j][1::])
@@ -47,5 +48,9 @@ with pdf.table(headings_style=headings_style, \
         for datum in data_row:
             row.cell(datum)
 
-pdf.output("Simple.pdf")
-os.startfile("Simple.pdf", "print")
+pdf.output("Simple.pdf") # Create ใบรายชื่อ
+# ----------------------------------------------- # 
+PRINT = False # ปริ้นไฟล์
+if PRINT: os.startfile("Simple.pdf", "print")
+# ----------------------------------------------- # 
+print("Finished")
