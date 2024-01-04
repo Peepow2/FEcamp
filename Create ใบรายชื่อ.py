@@ -47,5 +47,5 @@ with pdf.table(headings_style=headings_style, \
         for datum in data_row:
             row.cell(datum)
 
-
-pdf.output('Simple.pdf')
+pdf.output("Simple.pdf")
+os.startfile("Simple.pdf", "print")
