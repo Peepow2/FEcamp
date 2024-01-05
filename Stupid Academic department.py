@@ -21,7 +21,7 @@ TABLE_DATA = [
     ["4", "653XXXXX21", "Phum", "Computer", "20", "Chulalongkorn"],
     ["5", "653XXXXX21", "Jai", "Electrical", "20", "Chulalongkorn"],
     ["6", "653XXXXX21", "Confirm", "Electrical", "20", "Chulalongkorn"],
-    ["7", "653XXXXX21", "PaoPao", "ICE", "20", "Chulalongkorn"],
+    ["7", "653XXXXX21", "Paopao", "ICE", "20", "Chulalongkorn"],
     ["8", "653XXXXX21", "Mix", "Civil", "20", "Chulalongkorn"],
 ]
 s = S = len(TABLE_DATA)
