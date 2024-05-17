@@ -1,6 +1,8 @@
 import random
 import fpdf
+import time
 
+s = time.time()
 fin = open("score.csv", 'r')
 DATA = fin.readlines()
 fin.close()
@@ -41,9 +43,9 @@ for name in RN:
 
 for i in range(265):
     if i < Special_Room * Per_Room:
-        ROOM[RN[i % Special_Room]].append(score[i][1])
+        ROOM[RN[i % Special_Room]].append([score[i][1], score[i][0]])
     else:
-        ROOM[RN[seq[i % (8 - Special_Room)]]].append(score[i][1])
+        ROOM[RN[seq[i % (8 - Special_Room)]]].append([score[i][1], score[i][0]])
 # ---------------------------------------------- #
 pdf = fpdf.FPDF('P', 'mm', 'A4')
 pdf.set_auto_page_break(True, margin = 15)
@@ -55,6 +57,8 @@ pdf.add_font('Th_sarabun_psk', 'B', 'THSarabun Bold.ttf')
 
 HEADER = ["ลำดับ", "เลขประจำตัว", "ชื่อ - นามสกุล", "ชื่อเล่น", "ลงชื่อ (เช้า)", "ลงชื่อ (ออก)"]
 cnt = 0
+OUT = "เลขประจำตัว" + ",ห้อง" + ",คะแนน" + '\n'
+
 for key in ROOM:
     seq = 1
     pdf.add_page()
@@ -76,11 +80,11 @@ for key in ROOM:
         headings = table.row()
         for d in HEADER:
             headings.cell(d)
-       
-    for ID in sorted(ROOM[key]):
+
+    for IDc in sorted(ROOM[key]):
         with pdf.table(width = 180, line_height = 7, first_row_as_headings = False, col_widths = size, \
-                       text_align=("CENTER", "CENTER", "LEFT", "CENTER", "C", "C")) as table:
-            
+                       text_align = ("CENTER", "CENTER", "LEFT", "CENTER", "C", "C")) as table:
+            ID = IDc[0]
             NAME = D[ID][0] + D[ID][1] + ' ' + D[ID][2]
             Nick = D[ID][3].strip()
             ROW = [str(seq), ID, NAME, Nick, '', '']
@@ -89,4 +93,13 @@ for key in ROOM:
                 row.cell(datum)
             seq += 1
             
+            OUT += (ID + ',' + key + ',' + str(IDc[1]) + '\n')
+            
+fout = open('ID_ROOM_score.csv', 'w')
+fout.write(OUT)
+fout.close()
+
 pdf.output("Namesheet_After_Pretest.pdf") # Create ใบรายชื่อ
+
+total = time.time() - s
+print('TIME USED =', int(total // 3600), 'hour', int(total // 60), 'min', int(total % 60) + 1, 'seconds')
