@@ -12,6 +12,13 @@ for line in DATA:
 
 score = sorted(score, reverse = True)
 
+'''
+SWAP = [[29, 30], ...]
+for s in SWAP:
+    i, j = s
+    score[i], score[j] = score[j], score[i]
+'''
+
 fin = open("Name_List.csv", 'r')
 DATA = fin.readlines()
 fin.close()
