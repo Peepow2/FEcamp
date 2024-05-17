@@ -5,7 +5,8 @@ fin = open("score.csv", 'r')
 DATA = fin.readlines()
 fin.close()
 
-S = [float((line.split(',')[1]).strip()) for line in DATA]
+S = sorted([float((line.split(',')[1]).strip()) for line in DATA], reverse = True)
+print(S[30:38])
      
 plt.xticks(np.arange(0, 101, 5))
 plt.yticks(np.arange(0, 261, 1))
