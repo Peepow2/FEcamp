@@ -1,5 +1,5 @@
 import subprocess
-List_package_name = ['fpdf2', ...]
+List_package_name = ['fpdf2', 'random', 'numpy', 'matplotlib']
 def Install_Package():
     for pack in List_package_name:
         try:
