@@ -47,12 +47,6 @@ pdf.add_font('Th_sarabun_psk', '', 'THSarabun.ttf')
 pdf.add_font('Th_sarabun_psk', 'B', 'THSarabun Bold.ttf')
 
 HEADER = ["ลำดับ", "เลขประจำตัว", "ชื่อ - นามสกุล", "ชื่อเล่น", "ลงชื่อ (เช้า)", "ลงชื่อ (ออก)"]
-'''
-for key in ROOM:
-    print(key)
-    for id in ROOM[key]:
-        print(id, D[id])
-'''
 cnt = 0
 for key in ROOM:
     seq = 1
