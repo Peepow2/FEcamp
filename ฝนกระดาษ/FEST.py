@@ -32,7 +32,9 @@ for line in fin:
     ROOM = '301 302 303 304 305 306 307 308'.split()
     
     pdf.add_page()
+    pdf.image('Sheet/TPAT3_B5.png', w = 182, h = 257)
     #pdf.image('Sheet/A-LEVEL_B5.png', w = 182, h = 257)
+    pdf.image('FELogoBlackLine.png', x = 15.5, y = 7, w = 34, h = 34)
     
     pdf.set_font('Th_sarabun_psk', 'B', 14)
     pdf.set_xy(x = 75, y = 8)
@@ -71,6 +73,5 @@ for line in fin:
         pdf.ellipse(x = 140.6 + i*4.45, y = 16.90 + int(ID[i])*4.20, w = 3.4, h = 3.4, style = 'DF')
     
 pdf.output('Simple.pdf')
-
 total = time.time() - s
 print('TIME USED =', int(total // 3600), 'hour', int(total // 60), 'min', int(total % 60) + 1, 'seconds')
