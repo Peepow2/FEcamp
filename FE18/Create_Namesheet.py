@@ -96,7 +96,7 @@ def create_namesheet(FILE_NAME):
                        text_align=("CENTER", "CENTER", "CENTER", "LEFT", "CENTER")) as table:
             
             Name = ln[1] + ln[2] + '  ' + ln[3]
-            ROW = [str(R + 1), str(seq), get_ID(R+1), Name, '']
+            ROW = [str(R + 1), str(seq), get_ID(ln[0]), Name, '']
             row = table.row()
             for datum in ROW:
                 row.cell(datum)
